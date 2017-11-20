@@ -7,7 +7,7 @@ import { registerAsCustomElements, NgElementWithProps } from '@angular/elements'
 
 import { getModuleFactory, onError } from './bootstrap-helpers';
 
-import { HelloModule, entryComponents } from './app/hello.module';
+import { AppModule, entryComponents } from './app/app.module';
 import { environment } from './environments/environment';
 
 interface WithName {
@@ -31,12 +31,12 @@ if (environment.production) {
 //Normal bootstrap
 const doRegister = true ?
   () => {
-    const moduleFactory = getModuleFactory<HelloModule>(HelloModule);
+    const moduleFactory = getModuleFactory<AppModule>(AppModule);
     const platformRef = platformBrowser();
     return registerAsCustomElements(entryComponents, platformRef, moduleFactory);
   } :
   () => {
-    const bootstrapFn = () => platformBrowserDynamic().bootstrapModule(HelloModule);
+    const bootstrapFn = () => platformBrowserDynamic().bootstrapModule(AppModule);
     return registerAsCustomElements(entryComponents, bootstrapFn);
   };
 

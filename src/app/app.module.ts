@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 
-export const entryComponents = [HelloComponent];
+export const entryComponents = [AppComponent, HelloComponent];
 
 @NgModule({
-  declarations: [
-    HelloComponent
-  ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [HelloComponent]
+  declarations: [
+    ...entryComponents
+  ],
+  bootstrap: [AppComponent],
+  entryComponents
 })
-export class HelloModule {
+export class AppModule {
     ngDoBootstrap() {}
 }
