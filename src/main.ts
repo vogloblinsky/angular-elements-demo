@@ -1,57 +1,23 @@
-import { enableProdMode, NgModuleFactory, CompilerFactory, Type } from '@angular/core';
+import {
+  enableProdMode,
+  NgModuleFactory,
+  CompilerFactory,
+  Type
+} from '@angular/core';
+
+import 'zone.js/dist/zone';
 
 import { platformBrowser } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { registerAsCustomElements, NgElementWithProps } from '@angular/elements';
+import { registerAsCustomElements } from '@angular/elements';
 
-import { getModuleFactory, onError } from './bootstrap-helpers';
-
-import { AppModule, entryComponents } from './app/app.module';
-import { environment } from './environments/environment';
+import { HelloComponent, HelloModule } from './hello.component';
 
 interface WithName {
-    name: string;
+  name: string;
 }
 
-if (environment.production) {
-    enableProdMode();
-}
-
-//Initial bootstrap
-/*platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));*/
-
-//Light bootstrap
-/*registerAsCustomElements(
-  entryComponents,
-  () => platformBrowserDynamic().bootstrapModule(HelloModule)
-).catch(err => console.log(err));*/
-
-//Normal bootstrap
-const doRegister = true ?
-  () => {
-    const moduleFactory = getModuleFactory<AppModule>(AppModule);
-    const platformRef = platformBrowser();
-    return registerAsCustomElements(entryComponents, platformRef, moduleFactory);
-  } :
-  () => {
-    const bootstrapFn = () => platformBrowserDynamic().bootstrapModule(AppModule);
-    return registerAsCustomElements(entryComponents, bootstrapFn);
-  };
-
-doRegister().then(doStuff).catch(onError);
-
-function doStuff(): void {
-    interface EventHi extends Event {
-        detail: string;
-    }
-
-    const helloCp = document.querySelector('hello-world') as NgElementWithProps<any, WithName>;
-    console.log(helloCp);
-
-    helloCp.setAttribute('name', 'Marc');
-    helloCp.addEventListener('hi', (data:EventHi) => {
-        console.log(data.detail);
-    });
-}
+registerAsCustomElements([HelloComponent], () =>
+  platformBrowserDynamic().bootstrapModule(HelloModule)
+);
