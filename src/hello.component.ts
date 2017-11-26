@@ -3,7 +3,8 @@ import {
   NgModule,
   EventEmitter,
   Input,
-  Output
+  Output,
+  ViewEncapsulation
 } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,7 +14,13 @@ import { BrowserModule } from '@angular/platform-browser';
   template: `<h1>
       Hello world ! My name is {{name}} !
   </h1>
-  <button (click)="onClick()">Hi !</button>`
+  <button (click)="onClick()">Hi !</button>`,
+  styles: [`
+    button {
+      color: #3498db;
+    }
+  `],
+  encapsulation: ViewEncapsulation.Native
 })
 export class HelloComponent {
   @Input() name;
