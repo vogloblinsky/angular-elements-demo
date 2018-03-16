@@ -8,25 +8,25 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^5.2.8",
-    "@angular/compiler": "^5.2.8",
-    "@angular/core": "^5.2.8",
+    "@angular/common": "^5.2.9",
+    "@angular/compiler": "^5.2.9",
+    "@angular/core": "^5.2.9",
     "@angular/elements": "github:angular/elements-builds#labs/elements",
-    "@angular/platform-browser": "^5.2.8",
-    "@angular/platform-browser-dynamic": "^5.2.8",
+    "@angular/platform-browser": "^5.2.9",
+    "@angular/platform-browser-dynamic": "^5.2.9",
     "core-js": "^2.5.3",
     "mutation-observer": "^1.0.3",
-    "rxjs": "^5.5.6",
+    "rxjs": "^5.5.7",
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.3",
-    "@angular/compiler-cli": "^5.2.8",
+    "@angular/compiler-cli": "^5.2.9",
     "@ngtools/webpack": "^1.10.2",
     "compression-webpack-plugin": "^1.1.11",
     "custom-elements": "^1.0.2",
     "http-server": "^0.11.1",
-    "typescript": "~2.6.2",
+    "typescript": "~2.7.2",
     "webpack": "^3.11.0"
   }
 }
