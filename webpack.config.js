@@ -27,5 +27,6 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     filename: 'main.bundle.js'
-  }
+  },
+  mode: 'production'
 };
