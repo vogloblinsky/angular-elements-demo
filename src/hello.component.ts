@@ -3,10 +3,8 @@ import {
     EventEmitter,
     Input,
     Output,
-    ViewEncapsulation,
-    Injector
+    ViewEncapsulation
 } from '@angular/core';
-import { createCustomElement } from '@angular/elements';
 
 @Component({
     selector: 'hello-world',
@@ -33,10 +31,5 @@ export class HelloComponent {
 
     constructor() {
         console.log('hello-world cst');
-
-        /*const ngElementConstructor = createCustomElement(HelloComponent, {
-            injector
-        });
-        customElements.define('hello-world', ngElementConstructor);*/
     }
 }
