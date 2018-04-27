@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { HelloComponent } from './hello.component';
@@ -9,8 +10,10 @@ import { HelloComponent } from './hello.component';
     entryComponents: [HelloComponent]
 })
 export class HelloModule {
-    constructor() {
+    constructor(private injector: Injector) {
         console.log('HelloModule cstr');
+        const customElement = createCustomElement(HelloComponent, { injector });
+        customElements.define('hello-world', customElement);
     }
     ngDoBootstrap() {
         console.log('ngDoBootstrap');
