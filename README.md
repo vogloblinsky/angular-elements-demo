@@ -1,6 +1,6 @@
 # Angular Elements demo
 
-This project is a first try of using the experimental `@angular/elements`. 
+This project is a first try of `@angular/elements`. 
 
 It uses Ahead of Time Compilation provided by `@ngtools/webpack`. 
 

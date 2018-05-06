@@ -15,6 +15,7 @@ module.exports = {
   plugins: [
     new AotPlugin({
       tsConfigPath: './tsconfig.json',
+      mainPath: './src/main.ts',
       entryModule: path.resolve(__dirname, './src/hello.module#HelloModule' )
     }),
     new UglifyJsPlugin(),
@@ -31,5 +32,9 @@ module.exports = {
     filename: 'main.bundle.js'
   },
   mode: 'production',
-  performance: { hints: false }
+  performance: { hints: false },
+  stats: {
+    assets: true,
+    warnings: false
+  }
 };
