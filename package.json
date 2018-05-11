@@ -8,14 +8,14 @@
     },
     "private": true,
     "dependencies": {
-        "@angular/common": "6.0.0",
-        "@angular/compiler": "6.0.0",
-        "@angular/core": "6.0.0",
-        "@angular/elements": "6.0.0",
-        "@angular/platform-browser": "6.0.0",
-        "@angular/platform-browser-dynamic": "6.0.0",
-        "@webcomponents/custom-elements": "^1.1.0",
-        "core-js": "2.5.5",
+        "@angular/common": "6.0.1",
+        "@angular/compiler": "6.0.1",
+        "@angular/core": "6.0.1",
+        "@angular/elements": "6.0.1",
+        "@angular/platform-browser": "6.0.1",
+        "@angular/platform-browser-dynamic": "6.0.1",
+        "@webcomponents/custom-elements": "^1.1.1",
+        "core-js": "2.5.6",
         "mutation-observer": "1.0.3",
         "rxjs": "6.1.0",
         "rxjs-compat": "6.1.0",
@@ -28,7 +28,7 @@
         "http-server": "0.11.1",
         "typescript": "~2.7.2",
         "uglifyjs-webpack-plugin": "1.2.5",
-        "webpack": "4.7.0",
-        "webpack-cli": "2.1.2"
+        "webpack": "4.8.2",
+        "webpack-cli": "2.1.3"
     }
 }
