@@ -3,7 +3,9 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
+        "prebuild": "rm -rf dist",
         "build": "webpack",
+        "postbuild": "mkdir dist/bundles && cp ./node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js dist/bundles/ && cp ./node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js.map dist/bundles/ && cp ./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js dist/",
         "serve": "http-server ."
     },
     "private": true,
@@ -15,6 +17,7 @@
         "@angular/platform-browser": "6.0.1",
         "@angular/platform-browser-dynamic": "6.0.1",
         "@webcomponents/custom-elements": "^1.1.1",
+        "@webcomponents/webcomponentsjs": "^2.0.0",
         "core-js": "2.5.6",
         "mutation-observer": "1.0.3",
         "rxjs": "6.1.0",

@@ -2,8 +2,7 @@ import {
     Component,
     EventEmitter,
     Input,
-    Output,
-    ViewEncapsulation
+    Output
 } from '@angular/core';
 
 @Component({
@@ -18,8 +17,7 @@ import {
       color: #3498db;
     }
   `
-    ],
-    encapsulation: ViewEncapsulation.Native
+    ]
 })
 export class HelloComponent {
     @Input() name;
